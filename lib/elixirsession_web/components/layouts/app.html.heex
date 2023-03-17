@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <h1>Welcome to my Elixir and Phoenix app! We are going to store your session ID in this application</h1>
+  <p class="lead">This is a simple web page built using Elixir and Phoenix.</p>
+
+  <%= form_for @conn, Routes.page_path(@conn, :index), [method: :post], fn f -> %>
+    <div class="form-group">
+      <%= label f, :name, class: "control-label" %>
+      <%= text_input f, :name, class: "form-control" %>
+    </div>
+
+    <%= submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+
+  <% if @name do %>
+    <p>Your name is <%= @name %>.</p>
+  <% end %>
+</div>
